@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "matklad.rust-analyzer",
+        "eamodio.gitlens",
+        "davidanson.vscode-markdownlint",
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "tomoki1207.pdf"
+    ]
+}
