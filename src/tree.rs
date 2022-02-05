@@ -24,11 +24,11 @@ impl TreeNode {
             &mut self.right
         };
 
-        match target_node {
-            &mut Some(ref mut subnode) => subnode.insert(val),
-            &mut None => {
+        match *target_node {
+            Some(ref mut subnode) => subnode.insert(val),
+            None => {
                 let new_node = TreeNode {
-                    val: val,
+                    val,
                     left: None,
                     right: None,
                 };
@@ -44,11 +44,11 @@ pub fn is_balanced(tree: &TreeNode) -> bool {
         return true;
     }
 
-    if tree.left.is_none() && !tree.right.is_none() {
+    if tree.left.is_none() && tree.right.is_some() {
         return false;
     }
 
-    if !tree.left.is_none() && tree.right.is_none() {
+    if tree.left.is_some() && tree.right.is_none() {
         return false;
     }
 
