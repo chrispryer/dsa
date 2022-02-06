@@ -13,7 +13,7 @@ class TreeNode:
         self.right = right
 
 
-def is_balanced(tree: TreeNode) -> bool:
+def is_balanced_bst(tree: TreeNode) -> bool:
     if not tree.left and not tree.right:
         return True
 
@@ -26,4 +26,4 @@ def is_balanced(tree: TreeNode) -> bool:
     if tree.val < tree.left.val or tree.val > tree.right.val:
         return False
 
-    return is_balanced(tree=tree.left) and is_balanced(tree=tree.right)
+    return is_balanced_bst(tree=tree.left) and is_balanced_bst(tree=tree.right)

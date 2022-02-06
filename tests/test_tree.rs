@@ -1,4 +1,4 @@
-use dsa::tree::{is_balanced, TreeNode};
+use dsa::tree::{is_balanced_bst, TreeNode};
 
 #[test]
 fn test_tree() {
@@ -6,5 +6,5 @@ fn test_tree() {
     tree.insert(1);
     tree.insert(3);
 
-    assert!(is_balanced(&tree));
+    assert!(is_balanced_bst(&tree));
 }

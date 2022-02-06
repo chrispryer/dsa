@@ -39,7 +39,7 @@ impl TreeNode {
     }
 }
 
-pub fn is_balanced(tree: &TreeNode) -> bool {
+pub fn is_balanced_bst(tree: &TreeNode) -> bool {
     if tree.left.is_none() || tree.right.is_none() {
         return true;
     }
@@ -59,5 +59,5 @@ pub fn is_balanced(tree: &TreeNode) -> bool {
         return false;
     }
 
-    is_balanced(left) && is_balanced(right)
+    is_balanced_bst(left) && is_balanced_bst(right)
 }
